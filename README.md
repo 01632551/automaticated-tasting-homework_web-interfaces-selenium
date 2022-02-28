@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/4n2j11qaq50rk8ql?svg=true)](https://ci.appveyor.com/project/01632551/automaticated-tasting-homework-web-interfaces-sele)
