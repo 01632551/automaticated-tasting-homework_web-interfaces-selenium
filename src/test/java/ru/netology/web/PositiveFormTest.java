@@ -11,10 +11,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PositiveFormTest {
-    WebDriver driver;
+    private WebDriver driver;
 
     @BeforeAll
     static void setupClass() {
@@ -42,10 +42,10 @@ public class PositiveFormTest {
     void shouldSubmitRequest() {
         driver.get("http://localhost:9999/");
         WebElement form = driver.findElement(By.className("App_appContainer__3jRx1"));
-        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Василий-Стефан Григорович-Жуков");
-        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79270000000");
+        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Куравоал ыаомфваы-авсваы");
+        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+98473256734");
         form.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-        ((WebElement) form).findElement(By.className("button__content")).click();
+        form.findElement(By.className("button__content")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
